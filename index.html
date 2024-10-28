@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrimination Awareness App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section, .info-section, .quiz-section {
+            margin: 20px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .dropdown {
+            margin-top: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            position: absolute;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .show {
+            display: block;
+        }
+        .info-section, .quiz-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Discrimination Awareness App</h1>
+</header>
+
+<section>
+    <h2>Types of Discrimination</h2>
+    <div class="dropdown">
+        <button onclick="toggleDropdown()">Types of discrimination</button>
+        <div id="dropdownMenu" class="dropdown-content">
+            <a href="#" onclick="showInfo('age')">Age</a>
+            <a href="#" onclick="showInfo('gender')">Gender</a>
+            <a href="#" onclick="showInfo('racial')">Racial</a>
+            <a href="#" onclick="showInfo('religion')">Religion</a>
+            <a href="#" onclick="showInfo('sexualOrientation')">Sexual orientation</a>
+            <a href="#" onclick="showInfo('disability')">Disability or illness</a>
+            <a href="#" onclick="showInfo('linguistic')">Linguistic discrimination</a>
+            <a href="#" onclick="showInfo('ideology')">Discrimination by ideology</a>
+            <a href="#" onclick="showInfo('origin')">Discrimination by origin or race</a>
+            <a href="#" onclick="showInfo('marital')">Marital status</a>
+            <a href="#" onclick="showInfo('appearance')">Appearance</a>
+            <a href="#" onclick="showInfo('socialClass')">Social class</a>
+            <a href="#" onclick="showInfo('locality')">Locality</a>
+            <a href="#" onclick="showInfo('skinColor')">Skin color</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <button onclick="startQuiz()">Take the Quiz</button>
+</section>
+
+<div class="info-section" id="info-age">
+    <h2>Age Discrimination</h2>
+    <p>Age discrimination involves treating someone unfairly based on their age. This can occur in workplaces, social settings, and even in access to services. Often, this form of discrimination affects both younger and older people, with older adults sometimes excluded from job opportunities and younger individuals dismissed as inexperienced.</p>
+</div>
+
+<div class="info-section" id="info-gender">
+    <h2>Gender Discrimination</h2>
+    <p>Gender discrimination refers to unequal treatment based on someone's gender, often affecting women and gender-diverse individuals. This can include unequal pay, limited opportunities, and biased expectations based on societal gender roles.</p>
+</div>
+
+<div class="info-section" id="info-racial">
+    <h2>Racial Discrimination</h2>
+    <p>Racial discrimination is the unfair treatment of individuals based on race or ethnicity. This often includes systemic issues such as lack of representation, inequitable resources, and prejudiced assumptions about individuals from certain backgrounds.</p>
+</div>
+
+<div class="quiz-section" id="quiz">
+    <h2>Quiz: Identify the Type of Discrimination</h2>
+    <p id="quizQuestion"></p>
+    <button onclick="checkAnswer(1)" id="option1"></button>
+    <button onclick="checkAnswer(2)" id="option2"></button>
+    <button onclick="checkAnswer(3)" id="option3"></button>
+    <p id="feedback"></p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Discrimination Awareness App. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById("dropdownMenu").classList.toggle("show");
+    }
+
+    function showInfo(type) {
+        const sections = document.querySelectorAll('.info-section');
+        sections.forEach(section => section.style.display = 'none');
+        
+        document.getElementById('info-' + type).style.display = 'block';
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('button')) {
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    // Quiz Questions
+    const quizQuestions = [
+        {
+            question: "This type of discrimination involves unfair treatment based on age, affecting younger and older individuals alike.",
+            options: ["Age Discrimination", "Racial Discrimination", "Gender Discrimination"],
+            answer: 1
+        },
+        {
+            question: "This type involves unequal treatment based on someone's race or ethnicity, often with systemic effects.",
+            options: ["Religious Discrimination", "Racial Discrimination", "Disability Discrimination"],
+            answer: 2
+        },
+        {
+            question: "This discrimination is based on someone's gender and often affects women and gender-diverse individuals.",
+            options: ["Gender Discrimination", "Age Discrimination", "Linguistic Discrimination"],
+            answer: 1
+        }
+    ];
+    
+    let currentQuestion = 0;
+    let correctAnswers = 0;
+    let incorrectAnswers = 0;
+
+    function startQuiz() {
+        document.querySelectorAll('.info-section').forEach(section => section.style.display = 'none');
+        document.getElementById('quiz').style.display = 'block';
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        if (correctAnswers >= 5) {
+            document.getElementById('quiz').innerHTML = "<h2>Congratulations! You can identify different types of discrimination.</h2>";
+            return;
+        }
+        if (incorrectAnswers > 3) {
+            document.getElementById('quiz').innerHTML = "<h2>You still need to learn more about the types of discrimination.</h2>";
+            return;
+        }
+
+        const question = quizQuestions[currentQuestion];
+        document.getElementById('quizQuestion').innerText = question.question;
+        document.getElementById('option1').innerText = question.options[0];
+        document.getElementById('option2').innerText = question.options[1];
+        document.getElementById('option3').innerText = question.options[2];
+        document.getElementById('feedback').innerText = "";
+    }
+
+    function checkAnswer(selectedOption) {
+        const question = quizQuestions[currentQuestion];
+        if (selectedOption === question.answer) {
+            correctAnswers++;
+            document.getElementById('feedback').innerText = "Correct!";
+        } else {
+            incorrectAnswers++;
+            document.getElementById('feedback').innerText = "Incorrect. Try again!";
+        }
+        currentQuestion = (currentQuestion + 1) % quizQuestions.length;
+        setTimeout(loadQuestion, 1000);
+    }
+</script>
+
+</body>
+</html>
