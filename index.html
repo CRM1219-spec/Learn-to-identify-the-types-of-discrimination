@@ -17,7 +17,7 @@
             padding: 10px 0;
             text-align: center;
         }
-        section, .info-section, .quiz-section {
+        section, .quiz-section {
             margin: 20px 0;
             background-color: white;
             padding: 20px;
@@ -33,31 +33,10 @@
             font-size: 0.9em;
             color: #555;
         }
-        .dropdown {
-            margin-top: 10px;
-        }
-        .dropdown-content {
+        .quiz-section {
             display: none;
-            background-color: #f9f9f9;
-            min-width: 200px;
-            position: absolute;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
         }
-        .dropdown-content a {
-            color: black;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-        .show {
-            display: block;
-        }
-        .info-section, .quiz-section {
+        .description-section {
             display: none;
         }
     </style>
@@ -69,102 +48,30 @@
 </header>
 
 <section>
-    <h2>Types of Discrimination</h2>
-    <div class="dropdown">
-        <button onclick="toggleDropdown()">Types of discrimination</button>
-        <div id="dropdownMenu" class="dropdown-content">
-            <a href="#" onclick="showInfo('age')">Age</a>
-            <a href="#" onclick="showInfo('gender')">Gender</a>
-            <a href="#" onclick="showInfo('racial')">Racial</a>
-            <a href="#" onclick="showInfo('religion')">Religion</a>
-            <a href="#" onclick="showInfo('sexualOrientation')">Sexual orientation</a>
-            <a href="#" onclick="showInfo('disability')">Disability or illness</a>
-            <a href="#" onclick="showInfo('linguistic')">Linguistic discrimination</a>
-            <a href="#" onclick="showInfo('ideology')">Discrimination by ideology</a>
-            <a href="#" onclick="showInfo('origin')">Discrimination by origin or race</a>
-            <a href="#" onclick="showInfo('marital')">Marital status</a>
-            <a href="#" onclick="showInfo('appearance')">Appearance</a>
-            <a href="#" onclick="showInfo('socialClass')">Social class</a>
-            <a href="#" onclick="showInfo('locality')">Locality</a>
-            <a href="#" onclick="showInfo('skinColor')">Skin color</a>
-        </div>
-    </div>
-</section>
-
-<section>
+    <button onclick="showDescriptions()">Types of Discrimination</button>
     <button onclick="startQuiz()">Take the Quiz</button>
 </section>
 
-<div class="info-section" id="info-age">
-    <h2>Age Discrimination</h2>
-    <p>Age discrimination occurs when individuals are treated unfairly due to their age. This form of discrimination can affect both younger and older people. For instance, older adults may be denied job opportunities or promotions based on stereotypes that they are not technologically savvy or adaptable, while younger individuals may be dismissed as inexperienced or not taken seriously in professional environments. This bias can lead to significant barriers in the workplace and society, ultimately impacting individuals' self-esteem and economic stability.</p>
+<!-- Descriptions Section -->
+<div class="description-section" id="descriptions">
+    <h2>Types of Discrimination</h2>
+    <p><strong>Age:</strong> Prejudice against people based on their age, assuming they are too young or too old to be competent in certain areas.</p>
+    <p><strong>Gender:</strong> Discrimination based on gender roles, often resulting in unfair treatment, especially towards women in certain professional settings.</p>
+    <p><strong>Racial:</strong> Unfair treatment due to someone's race, often resulting in exclusion or harmful stereotypes.</p>
+    <p><strong>Religion:</strong> Discrimination against individuals based on their religious beliefs or practices, sometimes leading to unfair treatment in public or professional spaces.</p>
+    <p><strong>Sexual Orientation:</strong> Negative attitudes or treatment toward individuals based on their sexual orientation.</p>
+    <p><strong>Disability or Illness:</strong> Discrimination based on someone's physical or mental condition, which often leads to limiting their opportunities unnecessarily.</p>
+    <p><strong>Linguistic Discrimination:</strong> Treating someone unfairly because of their native language or accent, often suggesting that they are not as competent.</p>
+    <p><strong>Ideological Discrimination:</strong> Negative treatment based on someone's political or social beliefs, often dismissing or discrediting their viewpoints.</p>
+    <p><strong>Origin or Ethnicity:</strong> Prejudice against people because of their ethnic background or national origin, leading to assumptions or exclusion.</p>
+    <p><strong>Marital Status:</strong> Judgments or differential treatment based on someone's marital status, like assuming single people are incomplete.</p>
+    <p><strong>Appearance:</strong> Bias based on physical appearance, often affecting people differently based on body size, attractiveness, or other physical features.</p>
+    <p><strong>Social Class:</strong> Prejudice based on economic or social standing, leading to exclusion or assumptions based on perceived wealth.</p>
+    <p><strong>Locality:</strong> Discrimination based on where a person lives, often associating them with certain stereotypes based on their neighborhood.</p>
+    <p><strong>Skin Color:</strong> Discrimination based on the tone of a person's skin, often tied to racial stereotypes and bias.</p>
 </div>
 
-<div class="info-section" id="info-gender">
-    <h2>Gender Discrimination</h2>
-    <p>Gender discrimination involves treating someone unfairly based on their gender. This form of discrimination often disproportionately affects women, who may face unequal pay, limited career advancement opportunities, and harassment in various settings. Moreover, gender-diverse individuals may experience exclusion or hostility simply for expressing their identity. Societal norms and expectations often perpetuate gender stereotypes, leading to systemic inequities that hinder personal and professional growth. Awareness and advocacy are crucial for challenging these biases and promoting equality.</p>
-</div>
-
-<div class="info-section" id="info-racial">
-    <h2>Racial Discrimination</h2>
-    <p>Racial discrimination refers to the unfair treatment of individuals based on their race or ethnicity. This discrimination can manifest in various ways, including systemic racism, where certain racial groups are disadvantaged in access to education, employment, healthcare, and legal rights. Prejudiced assumptions and stereotypes about racial groups can lead to social stigmas and can hinder individuals from fully participating in society. Recognizing and combating racial discrimination is vital for creating a just and equitable society for all individuals, regardless of their racial background.</p>
-</div>
-
-<div class="info-section" id="info-religion">
-    <h2>Religious Discrimination</h2>
-    <p>Religious discrimination occurs when individuals are treated unfairly because of their religious beliefs or practices. This can include exclusion from social groups, workplace harassment, or denial of rights and accommodations for religious practices. Religious minorities often face greater scrutiny and prejudice, leading to social isolation and limited opportunities. Understanding and respecting diverse religious beliefs is essential for fostering a culture of acceptance and inclusion, as well as ensuring that individuals can practice their faith without fear of discrimination or backlash.</p>
-</div>
-
-<div class="info-section" id="info-sexualOrientation">
-    <h2>Discrimination by Sexual Orientation</h2>
-    <p>This type of discrimination involves treating individuals unfairly based on their sexual orientation. This can manifest in various ways, such as exclusion from social circles, workplace bias, and lack of access to rights and services for LGBTQ+ individuals. Discrimination based on sexual orientation can lead to significant emotional and psychological distress, reinforcing societal stigmas and barriers to acceptance. Advocating for equal rights and representation is crucial for challenging these discriminatory practices and promoting inclusivity in all areas of life.</p>
-</div>
-
-<div class="info-section" id="info-disability">
-    <h2>Disability Discrimination</h2>
-    <p>Disability discrimination occurs when individuals are treated unfavorably due to their physical or mental disabilities. This can include barriers in employment, education, and public services, where individuals may face stigma or be deemed less capable based on misconceptions about their abilities. Ensuring equal access and accommodations is essential for empowering individuals with disabilities and recognizing their contributions to society. Raising awareness about disability rights and fostering inclusive environments is key to combating discrimination in all its forms.</p>
-</div>
-
-<div class="info-section" id="info-linguistic">
-    <h2>Linguistic Discrimination</h2>
-    <p>Linguistic discrimination refers to unfair treatment based on an individual's language or dialect. This can affect non-native speakers who may face bias in education or employment settings, leading to social exclusion and limited opportunities. Additionally, individuals who speak with an accent may encounter prejudices or assumptions about their intelligence or abilities. Promoting linguistic diversity and understanding the value of multilingualism is vital for creating inclusive communities that celebrate different languages and cultures.</p>
-</div>
-
-<div class="info-section" id="info-ideology">
-    <h2>Discrimination by Ideology</h2>
-    <p>This type of discrimination occurs when individuals are treated unfairly based on their political beliefs or ideologies. It can manifest in various ways, including social ostracism, workplace bias, and exclusion from community activities. Individuals with differing ideological views may face hostility or ridicule, which can create divisions within communities and hinder open dialogue. Encouraging respectful discourse and understanding diverse perspectives is essential for fostering a democratic society that values all voices and opinions.</p>
-</div>
-
-<div class="info-section" id="info-origin">
-    <h2>Discrimination by Origin or Race</h2>
-    <p>Discrimination based on origin or race occurs when individuals are treated unfairly due to their ethnicity or national origin. This can lead to systemic inequalities, such as disparities in education, employment, and healthcare, and often results in social stigma and marginalization of certain groups. Awareness and advocacy are crucial for dismantling these prejudices and ensuring that all individuals can enjoy equal rights and opportunities, regardless of their background.</p>
-</div>
-
-<div class="info-section" id="info-marital">
-    <h2>Marital Status Discrimination</h2>
-    <p>Marital status discrimination occurs when individuals are treated differently based on their marital status. This includes bias against single individuals, married couples, or those who are divorced or widowed. Such discrimination can impact access to benefits, employment opportunities, and social acceptance. Challenging societal norms and biases surrounding marital status is essential for fostering inclusive environments that respect individual choices and circumstances.</p>
-</div>
-
-<div class="info-section" id="info-appearance">
-    <h2>Appearance Discrimination</h2>
-    <p>Appearance discrimination involves unfair treatment based on physical appearance, including body size, clothing, and grooming. This type of discrimination can lead to negative assumptions about a person's character, abilities, or professionalism, affecting opportunities in employment and social situations. Promoting body positivity and challenging societal beauty standards are crucial steps toward creating a more inclusive environment that values individuals for their skills and contributions rather than their looks.</p>
-</div>
-
-<div class="info-section" id="info-socialClass">
-    <h2>Social Class Discrimination</h2>
-    <p>Social class discrimination occurs when individuals are treated unfairly based on their socioeconomic status. This can lead to disparities in education, healthcare, and employment opportunities, often perpetuating cycles of poverty and disadvantage. Stigmas associated with lower social class can result in social exclusion and limited access to resources. Addressing social class discrimination requires a commitment to social justice and equity, ensuring that everyone has access to opportunities and support, regardless of their background.</p>
-</div>
-
-<div class="info-section" id="info-locality">
-    <h2>Locality Discrimination</h2>
-    <p>Locality discrimination occurs when individuals are treated unfairly based on their geographic location. This type of discrimination can manifest in biases against individuals from rural or low-income areas, affecting their access to resources, education, and job opportunities. Stereotypes about certain regions can lead to social stigma and exclusion, reinforcing systemic inequalities. Challenging these biases and promoting understanding of diverse local cultures and experiences are essential for fostering inclusivity.</p>
-</div>
-
-<div class="info-section" id="info-skinColor">
-    <h2>Skin Color Discrimination</h2>
-    <p>Skin color discrimination refers to unfair treatment based on the shade or tone of an individual's skin. This form of discrimination often intersects with racial and ethnic biases, leading to systemic inequalities in various aspects of life, including employment, education, and social relationships. Individuals with darker skin tones may face additional challenges and prejudices, impacting their opportunities and experiences. Raising awareness about the detrimental effects of skin color discrimination is vital for promoting equity and understanding among diverse communities.</p>
-</div>
-
+<!-- Quiz Section -->
 <div class="quiz-section" id="quiz">
     <h2 id="quizQuestion"></h2>
     <div>
@@ -176,70 +83,88 @@
 </div>
 
 <script>
-    function toggleDropdown() {
-        document.getElementById("dropdownMenu").classList.toggle("show");
+    // Show descriptions
+    function showDescriptions() {
+        document.getElementById('descriptions').style.display = 'block';
+        document.getElementById('quiz').style.display = 'none';
     }
 
-    function showInfo(type) {
-        const sections = document.querySelectorAll('.info-section');
-        sections.forEach(section => section.style.display = 'none');
-        
-        document.getElementById('info-' + type).style.display = 'block';
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('button')) {
-            const dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                const openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-
-    // Quiz Questions
+    // Quiz Questions with Situational Examples
     const quizQuestions = [
         {
-            question: "This type of discrimination involves unfair treatment based on age, affecting younger and older individuals alike.",
-            options: ["Age Discrimination", "Racial Discrimination", "Gender Discrimination"],
+            question: "Ana works in an engineering company where she is the only woman on her team. Despite her experience and innovative ideas, her boss always excludes her from important projects and assigns her less relevant tasks. Her colleagues also make comments like 'engineering is not for women.' What type of discrimination is this?",
+            options: ["Gender Discrimination", "Religious Discrimination", "Appearance Discrimination"],
             answer: 0
         },
         {
-            question: "This type involves unequal treatment based on someone's race or ethnicity, often with systemic effects.",
-            options: ["Religious Discrimination", "Racial Discrimination", "Disability Discrimination"],
-            answer: 1
-        },
-        {
-            question: "This discrimination is based on someone's gender and often affects women and gender-diverse individuals.",
-            options: ["Gender Discrimination", "Age Discrimination", "Linguistic Discrimination"],
+            question: "Juan is an exchange student from Africa. During a school activity at university, some of his classmates distance themselves from him, telling him he should 'go back to his country' because 'he doesn't fit in here.' What type of discrimination is this?",
+            options: ["Racial Discrimination", "Disability Discrimination", "Social Class Discrimination"],
             answer: 0
         },
         {
-            question: "This type of discrimination involves treating someone unfairly because of their religious beliefs.",
-            options: ["Sexual Orientation Discrimination", "Religious Discrimination", "Disability Discrimination"],
+            question: "Sara, who practices Islam and wears a hijab, gets a job at a clothing store. However, after a few weeks, her boss asks her to remove the hijab to make 'customers feel more comfortable,' suggesting that 'her religion might drive them away.' What type of discrimination is this?",
+            options: ["Linguistic Discrimination", "Religious Discrimination", "Social Class Discrimination"],
             answer: 1
         },
         {
-            question: "This form of discrimination targets individuals based on their sexual orientation.",
-            options: ["Gender Discrimination", "Discrimination by Sexual Orientation", "Age Discrimination"],
+            question: "Emilio brings his partner to a family gathering, but his uncle, upon finding out that Emilio is gay, makes comments about how 'those relationships aren’t natural' and suggests that the family 'shouldn’t support it.' What type of discrimination is this?",
+            options: ["Gender Discrimination", "Sexual Orientation Discrimination", "Ideological Discrimination"],
             answer: 1
         },
         {
-            question: "Disability discrimination occurs when individuals are treated unfavorably because of their physical or mental disabilities.",
-            options: ["Linguistic Discrimination", "Disability Discrimination", "Racial Discrimination"],
+            question: "Laura is a young woman with epilepsy. Although she meets all the qualifications for an administrative position, she is rejected from a company because 'her illness might be a risk,' even though the job is mainly office work with no physical risk. What type of discrimination is this?",
+            options: ["Disability Discrimination", "Social Class Discrimination", "Linguistic Discrimination"],
+            answer: 0
+        },
+        {
+            question: "Vicente is an immigrant living in a city where most people speak a different language than his native tongue. In a store, he's asked to speak in the local language or is ignored when trying to communicate. Some customers even insult him for 'not speaking like they do.' What type of discrimination is this?",
+            options: ["Linguistic Discrimination", "Age Discrimination", "Appearance Discrimination"],
+            answer: 0
+        },
+        {
+            question: "Rosa is an activist for an environmental conservation organization. At work, her boss discredits her and mocks her environmental beliefs, saying 'people like her are too radical.' He even denies her a promotion due to her opinions. What type of discrimination is this?",
+            options: ["Religious Discrimination", "Ideological Discrimination", "Racial Discrimination"],
             answer: 1
+        },
+        {
+            question: "Roberto is Mexican and lives in a European country. Every time he attends work meetings, his colleagues make comments like 'I thought Mexicans only came here on vacation' or 'You must be here to live off the government.' What type of discrimination is this?",
+            options: ["Origin or Ethnicity Discrimination", "Religious Discrimination", "Social Class Discrimination"],
+            answer: 0
+        },
+        {
+            question: "Carla is a single woman in her early thirties. Every time she attends family gatherings, relatives hint that there must be 'something wrong with her' for not being married yet, treating her as if she’s incomplete or lacks purpose. What type of discrimination is this?",
+            options: ["Appearance Discrimination", "Marital Status Discrimination", "Linguistic Discrimination"],
+            answer: 1
+        },
+        {
+            question: "Julia is overweight, and whenever she goes to the gym, some people give her disapproving looks and make comments, suggesting she’s 'just in the way' and 'shouldn’t even try.' What type of discrimination is this?",
+            options: ["Social Class Discrimination", "Appearance Discrimination", "Disability Discrimination"],
+            answer: 1
+        },
+        {
+            question: "Pedro works in an office where most of his colleagues are from wealthy families. They often exclude him from social events and joke about how 'people from his class don't fit in those places.' What type of discrimination is this?",
+            options: ["Class Discrimination", "Linguistic Discrimination", "Religious Discrimination"],
+            answer: 0
+        },
+        {
+            question: "Marta lives in a working-class neighborhood. When she meets people from other areas, some assume she’s less educated or has bad habits just because of where she lives. What type of discrimination is this?",
+            options: ["Religious Discrimination", "Locality Discrimination", "Social Class Discrimination"],
+            answer: 1
+        },
+        {
+            question: "Carlos is a man with dark skin. Every time he enters a luxury store, the staff closely monitors him, as if suspecting him of wanting to steal, while other customers aren’t watched in the same way. What type of discrimination is this?",
+            options: ["Color Discrimination", "Gender Discrimination", "Social Class Discrimination"],
+            answer: 0
         }
     ];
-    
+
     let currentQuestion = 0;
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
     function startQuiz() {
-        document.querySelectorAll('.info-section').forEach(section => section.style.display = 'none');
         document.getElementById('quiz').style.display = 'block';
+        document.getElementById('descriptions').style.display = 'none';
         loadQuestion();
     }
 
@@ -277,3 +202,4 @@
 
 </body>
 </html>
+
